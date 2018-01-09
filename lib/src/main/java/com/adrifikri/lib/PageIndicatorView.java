@@ -9,7 +9,6 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
 
 /**
@@ -102,29 +101,5 @@ public class PageIndicatorView extends View {
         }
 
         canvas.drawCircle(getWidth()/2, getHeight()/2, getWidth()/2-getWidth()/8, paintFill);
-    }
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        if (!isClickable()){
-            isSelected = false;
-            return super.onTouchEvent(event);
-        }
-
-        switch (event.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                isSelected = true;
-                break;
-            case MotionEvent.ACTION_CANCEL:
-            case MotionEvent.ACTION_UP:
-            case MotionEvent.ACTION_SCROLL:
-            case MotionEvent.ACTION_OUTSIDE:
-                isSelected = false;
-                break;
-
-        }
-
-        invalidate();
-        return super.dispatchTouchEvent(event);
     }
 }
