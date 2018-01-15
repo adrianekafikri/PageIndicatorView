@@ -17,7 +17,7 @@ allprojects {
 ### Step #2. Add the dependency 
 ```
 dependencies {
-    compile 'com.github.adrifikri:PageIndicatorView:1.0.1'
+    compile 'com.github.adrianekafikri:PageIndicatorView:1.0.1'
 }
 ```
 
